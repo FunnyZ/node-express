@@ -1,13 +1,8 @@
 /**
  * 路由
  */
-var fortunes = [
-    "Conquer your fears or they will conquer you.",
-    "Rivers need springs.",
-    "Do not fear what you don't know.",
-    "You will have a pleasant surprise.",
-    "Whenever possible, keep it simple.",
-];
+var fortune = require('../lib/fortune.js');
+
 module.exports = function(app) {
 
     app.get('/', function(req, res, next) {
@@ -15,8 +10,7 @@ module.exports = function(app) {
     });
 
     app.get('/about', function(req, res, next) {
-       var randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
-       res.render('about', { fortune: randomFortune });
+       res.render('about', { fortune: fortune.getFortune() });
     });
 
     // 404 catch-all 处理器（中间件）

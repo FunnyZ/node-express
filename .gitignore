@@ -3,3 +3,5 @@ node_modules
 
 # files don't want to check
 .DS_Store
+.vscode
+*~
