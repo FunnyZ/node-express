@@ -1,0 +1,5 @@
+# ignore packages installed by npm
+node_modules
+
+# files don't want to check
+.DS_Store
