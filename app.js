@@ -14,6 +14,10 @@ app.engine('handlebars', handlebars.engine);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
+// static 中间件可以将一个或多个目录指派为包含静态资源的目录，其中的资源不经过任何特殊处理直接发送到客户端
+// static 中间件相当于给要发送的所有静态文件创建了一个路由，渲染文件并发送给客户端
+app.use(express.static(path.join(__dirname, '/public')));
+
 routes(app);
 
 app.listen(app.get('port'), function() {
