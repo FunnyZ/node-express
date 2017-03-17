@@ -10,7 +10,7 @@ module.exports = function(app) {
     });
 
     app.get('/about', function(req, res, next) {
-       res.render('about', { fortune: fortune.getFortune() });
+       res.render('about', { fortune: fortune.getFortune(), pageTestScript: '/vendor/qa/tests-about.js' });
     });
 
     // 404 catch-all 处理器（中间件）

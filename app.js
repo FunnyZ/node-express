@@ -18,6 +18,12 @@ app.set('view engine', 'handlebars');
 // static 中间件相当于给要发送的所有静态文件创建了一个路由，渲染文件并发送给客户端
 app.use(express.static(path.join(__dirname, '/public')));
 
+// 必需在所有路由定义之前，作用是：判断测试是否启用
+app.use(function(req, res, next) {
+    res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
+    next();
+});
+
 routes(app);
 
 app.listen(app.get('port'), function() {
