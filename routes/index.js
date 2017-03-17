@@ -13,6 +13,14 @@ module.exports = function(app) {
        res.render('about', { fortune: fortune.getFortune(), pageTestScript: '/vendor/qa/tests-about.js' });
     });
 
+    app.get('/tours/beijing-city', function(req, res, next) {
+        res.render('tours/beijing-city');
+    });
+
+    app.get('/tours/request-group-rate', function(req, res, next) {
+        res.render('tours/request-group-rate');
+    });
+
     // 404 catch-all 处理器（中间件）
     app.use(function(req, res, next) {
         res.status(404);

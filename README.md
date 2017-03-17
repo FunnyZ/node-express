@@ -11,6 +11,11 @@ Node与Express开发
 > public: 静态文件
 >> img: 图片资源
 
+>> vendor: 提供测试使用
+>>> qa: 页面测试
+
+> qa: headless browser tests
+
 > routes: 路由
 
 > views: 视图
