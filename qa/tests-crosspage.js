@@ -1,5 +1,5 @@
 /**
- * 跨页测试
+ * 跨页测试(测试referrer跳转有问题，和书上不一致，clickLink)
  */
 var Browser = require('zombie'),
     assert = require('chai').assert;
@@ -34,8 +34,8 @@ suite('Cross-Page Tests', function() {
 
     test('visiting the "request group rate" page dirctly should result in an empty referrer field', function(done) {
         browser.visit('http://localhost:3000/tours/request-group-rate', function() { // 访问referrer页面
-           assert(browser.field('referrer').value === '');
-           done();
+            assert(browser.field('referrer').value === '');
+            done();
         });
     });
 });

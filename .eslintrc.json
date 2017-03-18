@@ -1,0 +1,36 @@
+{
+	"env": {
+		"browser": true,
+		"node": true,
+		"commonjs": true,
+		"mocha": true
+	},
+	"extends": "eslint:recommended",
+	"rules": {
+		// 禁止console
+		"no-console": 0,
+		// 缩进符
+		"indent": [
+			2,
+			4,
+			{
+				"SwitchCase": 1
+			}
+		],
+		"linebreak-style": [
+			"error",
+			"unix"
+		],
+		// 引号
+		"quotes": [
+			2,
+			"single",
+			"avoid-escape"
+		],
+		// 要求或禁止使用分号而不是 ASI（这个才是控制行尾部分号的，）
+		"semi": [
+			"error",
+			"always"
+		]
+	}
+}
