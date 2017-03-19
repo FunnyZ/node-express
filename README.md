@@ -4,6 +4,9 @@ Node与Express开发
 ## package.json
 作用：描述项目、存放项目元数据和列出依赖项
 
+## .eslintrc.json
+作用：自定义代码规则
+
 ## 目录结构
 
 > lib: 存放模块

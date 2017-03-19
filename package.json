@@ -21,7 +21,9 @@
     "eslint": "^3.18.0",
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
+    "gulp-util": "^3.0.8",
     "mocha": "^3.2.0",
+    "simplecrawler": "^1.1.0",
     "zombie": "^5.0.5"
   }
 }
