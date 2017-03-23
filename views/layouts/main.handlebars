@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{{_sections.head}}}
     <title>Z Website</title>
     {{#if showTests}}
         <link rel="stylesheet" href="/vendor/mocha.css">
@@ -15,6 +16,7 @@
     {{!--关闭HTML转义--}}
     {{{body}}}
     <footer>&copy; 2017 Z Website</footer>
+    {{{_sections.jquery}}}
     {{#if showTests}}
         <div id="mocha"></div>
         <script src="/vendor/mocha.js"></script>

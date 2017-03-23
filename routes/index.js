@@ -31,6 +31,25 @@ module.exports = function (app) {
         res.render('tours/request-group-rate');
     });
 
+    // 段落测试页面
+    app.get('/jquery-test', function (req, res, next) {
+        res.render('jquery-test');
+    });
+
+    app.get('/nursery-rhyme', function (req, res, next) {
+        res.render('nursery-rhyme');
+    });
+
+    // ajax调用
+    app.get('/data/nursery-rhyme', function (req, res, next) {
+        res.json({
+            animal: 'squirrel',
+            bodyPart: 'tail',
+            adjective: 'bushy',
+            noun: 'heck',
+        });
+    });
+
     // 404 catch-all 处理器（中间件）
     app.use(function (req, res, next) {
         res.status(404);
