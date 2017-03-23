@@ -23,3 +23,5 @@ Node与Express开发
 
 > views: 视图
 >> layouts: 母板
+
+>> partials: 组件模版
