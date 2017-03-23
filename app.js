@@ -2,7 +2,8 @@ var express = require('express'),
     path = require('path'),
     handlebars = require('express-handlebars').create({ defaultLayout: 'main' });   // 指明了默认布局，非特别指明，所有的视图用的都是这个布局
 
-var routes = require('./routes');
+var routes = require('./routes'),
+    weather = require('./lib/weather.js').getWeatherData;
 
 var app = express();
 
@@ -20,7 +21,12 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // 必需在所有路由定义之前，作用是：判断测试是否启用
 app.use(function(req, res, next) {
+    if ( !res.locals.partials ) {
+        res.locals.partials = {};
+    }
     res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
+    // weatherContext,不能和模版同名，会引起调用到模版（我的理解）
+    res.locals.partials.weatherContext = weather();
     next();
 });
 

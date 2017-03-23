@@ -14,6 +14,8 @@ var fortune = require('../lib/fortune.js');
 module.exports = function (app) {
 
     app.get('/', function (req, res, next) {
+        // 不使用布局
+        // res.render('home', { layout: null });
         res.render('home');
     });
 

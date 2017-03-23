@@ -12,7 +12,9 @@
 </head>
 <body>
     <header><img src="/img/z-logo.png" alt="Z Logo" width="88"></header>
+    {{!--关闭HTML转义--}}
     {{{body}}}
+    <footer>&copy; 2017 Z Website</footer>
     {{#if showTests}}
         <div id="mocha"></div>
         <script src="/vendor/mocha.js"></script>
